@@ -54,8 +54,9 @@ public class PlayerController : MonoBehaviour
             Vector3 calcMove = new Vector3(movement.x, movement.y, 0.0f);
 
             //Hacky fix to prevent diagonal movement.
-            if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y)){
-                calcMove.x = 0;
+            if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y))
+            {
+                calcMove = Vector3.zero;
             }
 
             //Check if we can move to a place without colliding.
