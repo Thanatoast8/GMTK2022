@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
 
     private bool movingAllowed = true;
 
-    public int health = 20;
+    public int healthPoints = 20;
+    public int movementPoints = 0;
+    public int inventoryPoints = 0;
 
     private void Awake()
     {
@@ -50,24 +52,27 @@ public class PlayerController : MonoBehaviour
     void Move(Vector2 movement)
     {
         if (movingAllowed)
-        {
-            //Create a copy of the movement vector to keep things safe
-            Vector3 calcMove = new Vector3(movement.x, movement.y, 0.0f);
-
-            //Hacky fix to prevent diagonal movement.
-            if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y))
+            if (movementPoints != 0)
             {
-                calcMove = Vector3.zero;
-            }
+                {
+                    //Create a copy of the movement vector to keep things safe
+                    Vector3 calcMove = new Vector3(movement.x, movement.y, 0.0f);
 
-            //Check if we can move to a place without colliding.
-            if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, whatStopsMovement))
-            {
-                movePoint.position += calcMove;
-            }
+                    //Hacky fix to prevent diagonal movement.
+                    if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y))
+                    {
+                        calcMove = Vector3.zero;
+                    }
 
-            
-        }
+                    //Check if we can move to a place without colliding.
+                    if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, whatStopsMovement))
+                    {
+                        movePoint.position += calcMove;
+                    }
+
+                    movementPoints--;
+                }
+            }
 
         
     }

@@ -58,98 +58,102 @@ public class Enemy : MonoBehaviour
 
     void move()
     {
-        Vector3 calcMove;
-        switch (movePattern)
+        if (moves != 0)
         {
-            case MovePattern.Slime:
+            Vector3 calcMove;
+            switch (movePattern)
+            {
+                case MovePattern.Slime:
 
-                calcMove = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0.0f);
+                    calcMove = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), 0.0f);
 
-                //Check if we can move to a place without colliding.
-                if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, playerLayerMask))
-                {
-                    movePoint.position += calcMove;
-                }
-                else
-                {
-                    player.GetComponent<PlayerController>().health -= 5;
-                }
-                break;
-
-            case MovePattern.Dragon:
-                if (playerTransform.position.y - movePoint.position.y == 0)
-                {
-                    if (playerTransform.position.x - movePoint.position.x > 0)
+                    //Check if we can move to a place without colliding.
+                    if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, playerLayerMask))
                     {
-                        calcMove = new Vector3(1.0f, 0.0f, 0.0f);
+                        movePoint.position += calcMove;
                     }
                     else
                     {
-                        calcMove = new Vector3(-1.0f, 0.0f, 0.0f);
+                        player.GetComponent<PlayerController>().healthPoints -= 5;
                     }
-                    
-                }
-                else
-                {
-                    if (playerTransform.position.y - movePoint.position.y > 0)
+                    break;
+
+                case MovePattern.Dragon:
+                    if (playerTransform.position.y - movePoint.position.y == 0)
                     {
-                        calcMove = new Vector3(0.0f, 1.0f, 0.0f);
+                        if (playerTransform.position.x - movePoint.position.x > 0)
+                        {
+                            calcMove = new Vector3(1.0f, 0.0f, 0.0f);
+                        }
+                        else
+                        {
+                            calcMove = new Vector3(-1.0f, 0.0f, 0.0f);
+                        }
+
                     }
                     else
                     {
-                        calcMove = new Vector3(0.0f, -1.0f, 0.0f);
+                        if (playerTransform.position.y - movePoint.position.y > 0)
+                        {
+                            calcMove = new Vector3(0.0f, 1.0f, 0.0f);
+                        }
+                        else
+                        {
+                            calcMove = new Vector3(0.0f, -1.0f, 0.0f);
+                        }
                     }
-                }
-                break;
-            case MovePattern.Skeleton:
-                if (playerTransform.position.y - movePoint.position.y == 0)
-                {
-                    if (playerTransform.position.x - movePoint.position.x > 0)
+                    break;
+                case MovePattern.Skeleton:
+                    if (playerTransform.position.y - movePoint.position.y == 0)
                     {
-                        calcMove = new Vector3(1.0f, 0.0f, 0.0f);
+                        if (playerTransform.position.x - movePoint.position.x > 0)
+                        {
+                            calcMove = new Vector3(1.0f, 0.0f, 0.0f);
+                        }
+                        else
+                        {
+                            calcMove = new Vector3(-1.0f, 0.0f, 0.0f);
+                        }
+
                     }
                     else
                     {
-                        calcMove = new Vector3(-1.0f, 0.0f, 0.0f);
+                        if (playerTransform.position.y - movePoint.position.y > 0)
+                        {
+                            calcMove = new Vector3(0.0f, 1.0f, 0.0f);
+                        }
+                        else
+                        {
+                            calcMove = new Vector3(0.0f, -1.0f, 0.0f);
+                        }
                     }
+                    break;
+                case MovePattern.Sans:
+                    calcMove = new Vector3(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
+                    break;
 
-                }
-                else
-                {
-                    if (playerTransform.position.y - movePoint.position.y > 0)
-                    {
-                        calcMove = new Vector3(0.0f, 1.0f, 0.0f);
-                    }
-                    else
-                    {
-                        calcMove = new Vector3(0.0f, -1.0f, 0.0f);
-                    }
-                }
-                break;
-            case MovePattern.Sans:
-                calcMove = new Vector3(playerTransform.position.x, playerTransform.position.y, playerTransform.position.z);
-                break;
+                default:
+                    calcMove = new Vector3(0.0f, 0.0f, 0.0f);
+                    break;
+            }
 
-            default:
-                calcMove = new Vector3(0.0f, 0.0f, 0.0f);
-                break;
-        }
+            //Hacky fix to prevent diagonal movement.
+            if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y))
+            {
+                calcMove = Vector3.zero;
+            }
 
-        //Hacky fix to prevent diagonal movement.
-        if (Mathf.Abs(calcMove.x) == Mathf.Abs(calcMove.y))
-        {
-            calcMove = Vector3.zero;
-        }
-
-        //Check if we can move to a place without colliding.
-        if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, playerLayerMask))
-        {
-            movePoint.position += calcMove;
-        }
-        else
-        {
-            Debug.Log("Gottem.");
-            player.GetComponent<PlayerController>().health -= 5;
+            //Check if we can move to a place without colliding.
+            if (!Physics2D.OverlapCircle(movePoint.position + calcMove, .2f, playerLayerMask))
+            {
+                movePoint.position += calcMove;
+            }
+            else
+            {
+                Debug.Log("Gottem.");
+                player.GetComponent<PlayerController>().healthPoints -= 5;
+            }
+            moves--;
         }
     }
 }
