@@ -7,6 +7,16 @@ public class Item : ScriptableObject
 {
     new public string name = "New Item";
     public Sprite image = null;
-    
+
+
+
+    public virtual void Use()
+    {
+        //use item
+        Debug.Log("Using " + name);
+    }
+
 }
+
+
 

@@ -22,4 +22,13 @@ public class InventorySlot : MonoBehaviour
         image.sprite = null;
         image.enabled = false;
     }
+
+    public void UseItem()
+    {
+        if (item != null)
+        {
+            item.Use();
+            
+        }
+    }
 }

@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public static Inventory instance;
     private void Awake()
     {
+        Debug.Log("calling awake from inventory");
         if (instance!= null)
         {
             Debug.LogWarning("Bruh wtf there's more than one inventory");
