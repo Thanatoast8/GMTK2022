@@ -51,26 +51,15 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: caedc70031675c34db4512f6ff49aa2a, type: 3}
   - {fileID: 21300000, guid: 7068557177fc2d846ae812e40182a7c3, type: 3}
-  - {fileID: 21300000, guid: 952af592998d4b347b4beb359ccf621f, type: 3}
   - {fileID: 21300000, guid: 864626b4ced535749967db328feedf67, type: 3}
   - {fileID: 21300000, guid: c91fb0554dc00dc49b2193b43d2f9d6e, type: 3}
-  - {fileID: 21300000, guid: e50cae859fa797e429e6180e5e978f9f, type: 3}
   - {fileID: 21300000, guid: f3919e364d7a08947ac61224e96b5365, type: 3}
-  - {fileID: 21300000, guid: b06d6c47835b43747b24dc8a0fb89e53, type: 3}
-  - {fileID: 21300000, guid: 02ffc5d83f8b9514fbb17376a1041904, type: 3}
-  - {fileID: 21300000, guid: 5bec5e7990f94834d8efd3c3692b5e90, type: 3}
-  - {fileID: 21300000, guid: d1c4019995958064a9667a114f6c02a6, type: 3}
-  - {fileID: 21300000, guid: 33446cb9591c7814795e20d125291c9a, type: 3}
-  - {fileID: 21300000, guid: 00e868e9050e2b74791c1d292eeba1e9, type: 3}
   - {fileID: 21300000, guid: ae5b59f90ef39fe44a0e4ad03ab15ba0, type: 3}
   - {fileID: 21300000, guid: ee68cd4adbc7093408f31122ae0dad45, type: 3}
+  - {fileID: 21300000, guid: 8253125abedc1e743a2cb6be18ffe7c2, type: 3}
   - {fileID: 21300000, guid: e02af5aaad6725045b0bf5f13aafda66, type: 3}
-  - {fileID: 21300000, guid: 47cab0da240aeb044b1d37705308d7ec, type: 3}
-  - {fileID: 21300000, guid: 1357782ba51047849a5c3d6145494466, type: 3}
   - {fileID: 21300000, guid: 779c85fb745d8f04b8133c93f9ecc9dd, type: 3}
-  - {fileID: 21300000, guid: 48a3edfe1fa84654681fcfb770d46d32, type: 3}
   - {fileID: 1572894390, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: 1597171302, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: 893599513, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
@@ -119,27 +108,15 @@ SpriteAtlas:
   - {fileID: 1477759857, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: 517985384, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: -1735087983, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
-  - {fileID: 21300000, guid: 051a204f49ae59a438fd965f435527f6, type: 3}
   m_PackedSpriteNamesToIndex:
-  - reddice4
   - tree
-  - sansdice4
-  - sansdicetemp
+  - sansdice
   - leezard
-  - reddice1
   - slimeperhaps
-  - sansdice3
-  - reddice2
-  - sansdice1
-  - reddice5
-  - sansdice2
-  - sansdice5
   - MainMenuBackgroundTemp
   - fire
+  - Shadow
   - skele
-  - reddice6
-  - sansdice6
-  - bettergoblin
   - bettergoblin
   - Grass-Background-TileMap_0
   - Grass-Background-TileMap_1
@@ -189,7 +166,6 @@ SpriteAtlas:
   - Grass-Background-TileMap_14
   - Grass-Background-TileMap_19
   - Grass-Background-TileMap_18
-  - reddice3
   m_RenderDataMap: {}
   m_Tag: New Sprite Atlas
   m_IsVariant: 0
