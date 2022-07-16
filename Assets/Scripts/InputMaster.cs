@@ -37,9 +37,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""inventoryToggle"",
+                    ""name"": ""Select"",
                     ""type"": ""Button"",
-                    ""id"": ""08b8cb55-8d1b-4bad-96e0-8f1c044051de"",
+                    ""id"": ""8a1cbbb0-15c9-4625-b003-6dbff98a1efc"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -159,23 +159,23 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""686f0b3b-6ba0-44e9-aedc-41e265d5037e"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""id"": ""c44f19b5-6d65-4f62-84cd-1287c354f488"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""inventoryToggle"",
+                    ""groups"": ""KBM"",
+                    ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""880b52d9-5db2-47c8-ba85-5d413285d70d"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""caad91e7-2430-432a-88b5-73f7e4a305c8"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""inventoryToggle"",
+                    ""groups"": ""Controler"",
+                    ""action"": ""Select"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -215,7 +215,7 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Move = m_Combat.FindAction("Move", throwIfNotFound: true);
-        m_Combat_inventoryToggle = m_Combat.FindAction("inventoryToggle", throwIfNotFound: true);
+        m_Combat_Select = m_Combat.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -276,13 +276,13 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Combat;
     private ICombatActions m_CombatActionsCallbackInterface;
     private readonly InputAction m_Combat_Move;
-    private readonly InputAction m_Combat_inventoryToggle;
+    private readonly InputAction m_Combat_Select;
     public struct CombatActions
     {
         private @InputMaster m_Wrapper;
         public CombatActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Combat_Move;
-        public InputAction @inventoryToggle => m_Wrapper.m_Combat_inventoryToggle;
+        public InputAction @Select => m_Wrapper.m_Combat_Select;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -295,9 +295,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
-                @inventoryToggle.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnInventoryToggle;
-                @inventoryToggle.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnInventoryToggle;
-                @inventoryToggle.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnInventoryToggle;
+                @Select.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnSelect;
+                @Select.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnSelect;
+                @Select.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnSelect;
             }
             m_Wrapper.m_CombatActionsCallbackInterface = instance;
             if (instance != null)
@@ -305,9 +305,9 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @inventoryToggle.started += instance.OnInventoryToggle;
-                @inventoryToggle.performed += instance.OnInventoryToggle;
-                @inventoryToggle.canceled += instance.OnInventoryToggle;
+                @Select.started += instance.OnSelect;
+                @Select.performed += instance.OnSelect;
+                @Select.canceled += instance.OnSelect;
             }
         }
     }
@@ -333,6 +333,6 @@ public partial class @InputMaster : IInputActionCollection2, IDisposable
     public interface ICombatActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnInventoryToggle(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }

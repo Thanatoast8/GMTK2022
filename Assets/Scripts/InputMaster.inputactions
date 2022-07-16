@@ -15,9 +15,9 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "inventoryToggle",
+                    "name": "Select",
                     "type": "Button",
-                    "id": "08b8cb55-8d1b-4bad-96e0-8f1c044051de",
+                    "id": "8a1cbbb0-15c9-4625-b003-6dbff98a1efc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -137,23 +137,23 @@
                 },
                 {
                     "name": "",
-                    "id": "686f0b3b-6ba0-44e9-aedc-41e265d5037e",
-                    "path": "<Keyboard>/i",
+                    "id": "c44f19b5-6d65-4f62-84cd-1287c354f488",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "inventoryToggle",
+                    "groups": "KBM",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "880b52d9-5db2-47c8-ba85-5d413285d70d",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "caad91e7-2430-432a-88b5-73f7e4a305c8",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "inventoryToggle",
+                    "groups": "Controler",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
