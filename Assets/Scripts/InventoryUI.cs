@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour
 
     }
 
-    void toggleInventory()
+    public void toggleInventory()
     {
         Debug.Log("togglelin' inventory");
         inventoryUI.SetActive(!inventoryUI.activeSelf);

@@ -4,16 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour
 {
+   // public Sprite debugImage;
     public Image image;
-    Item item; 
+    public Item item;
     public void AddItem(Item newItem)
     {
-        item = newItem;
+        
+        
+        if (newItem == null)
+        {
+            Debug.LogError("null item detected");
+            image.enabled = false;
+        }
+        else if (newItem != null)
+        {
+            item = newItem;
+            image.sprite = item.image;
+            image.enabled = true;
+        }
+        
+        //image.sprite = debugImage;
+        //
 
-        image.sprite = item.image;
-        image.enabled = true;
         
     }
+   
 
     public void ClearSlot()
     {
@@ -22,13 +37,30 @@ public class InventorySlot : MonoBehaviour
         image.sprite = null;
         image.enabled = false;
     }
+   
+    public bool isGamer______________________________________________________()
+    {
+        return true;
+    }
 
     public void UseItem()
     {
+
+        Debug.Log("aaa");
+        bool successful = false;
         if (item != null)
         {
-            item.Use();
-            
+            successful = item.Use();
+            Debug.Log("bbb");
         }
+
+        if (item is Die && successful)
+        {
+            ClearSlot();
+            Debug.Log("ccc");
+        }
+
+       
+        //return successful;
     }
 }

@@ -36,7 +36,7 @@ public class SubMenu : MonoBehaviour
     {
 
         //subMenuUI.SetActive(false);
-        close();
+        //close();
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
 
 
@@ -83,7 +83,7 @@ public class SubMenu : MonoBehaviour
 
     public void test()
     {
-        Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        Debug.Log("testing complete :)");
     }
 
 

@@ -14,18 +14,23 @@ public class Wand : Item
     {
         sub = new SubMenu();
     }
-    public override void Use()
+    public override bool Use()
     {
         base.Use();
         Debug.Log("use wand!!");
+        //SubMenu.instance.open(this);
 
         if (!SubMenu.instance.isActiveAndEnabled)
         {
+            Debug.Log("Submenu is CLOSED and we will attempt to open the submenu");
             SubMenu.instance.open(this);
+            return true;
         }
         else
         {
+            Debug.Log("Submenu is OPEN and we will attempt to close the submenu");
             SubMenu.instance.close();
+            return true;
         }
 
     }
