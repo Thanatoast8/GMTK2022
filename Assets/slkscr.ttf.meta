@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f52b4097ec01184993c8d25e389a681
+guid: 2c4d720c1ea661a429e04116884e2a2a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   - Silkscreen
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 1
+  fontRenderingMode: 0
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
