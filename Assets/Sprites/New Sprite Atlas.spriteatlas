@@ -51,7 +51,15 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 7068557177fc2d846ae812e40182a7c3, type: 3}
+  - {fileID: 21300000, guid: 864626b4ced535749967db328feedf67, type: 3}
+  - {fileID: 21300000, guid: c91fb0554dc00dc49b2193b43d2f9d6e, type: 3}
+  - {fileID: 21300000, guid: f3919e364d7a08947ac61224e96b5365, type: 3}
   - {fileID: 21300000, guid: ae5b59f90ef39fe44a0e4ad03ab15ba0, type: 3}
+  - {fileID: 21300000, guid: ee68cd4adbc7093408f31122ae0dad45, type: 3}
+  - {fileID: 21300000, guid: 8253125abedc1e743a2cb6be18ffe7c2, type: 3}
+  - {fileID: 21300000, guid: e02af5aaad6725045b0bf5f13aafda66, type: 3}
+  - {fileID: 21300000, guid: 779c85fb745d8f04b8133c93f9ecc9dd, type: 3}
   - {fileID: 1572894390, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: 1597171302, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: 893599513, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
@@ -101,7 +109,15 @@ SpriteAtlas:
   - {fileID: 517985384, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   - {fileID: -1735087983, guid: 70fae70fba7b5334a85f5102ff82a9c8, type: 3}
   m_PackedSpriteNamesToIndex:
+  - tree
+  - sansdice
+  - leezard
+  - slimeperhaps
   - MainMenuBackgroundTemp
+  - fire
+  - Shadow
+  - skele
+  - bettergoblin
   - Grass-Background-TileMap_0
   - Grass-Background-TileMap_1
   - Grass-Background-TileMap_2

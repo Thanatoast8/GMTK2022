@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private bool movingAllowed = true;
 
+    public int health = 20;
 
     private void Awake()
     {
